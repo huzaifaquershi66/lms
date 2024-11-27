@@ -1,63 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdMob Integration</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-    .ad-container {
-      width: 100%;
-      max-width: 300px; /* Adjust size to fit your needs */
-      min-height: 250px; /* Ensures placeholder space for ads */
-      margin: 20px auto;
-      display: block;
-    }
-    .message {
-      font-size: 18px;
-      font-weight: bold;
-      color: #333;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adsterra Ads with Redirect</title>
 </head>
 <body>
-  <div class="ad-container">
-    <!-- AdMob Ad -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-5896246184821841"
-         data-ad-slot="6220472223"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
+    <!-- Adsterra Ad -->
+    <div id="ad-container" style="text-align:center;">
+        <script type="text/javascript">
+            (function() {
+                var atOptions = {
+                    'key': '4439713',  // Replace with your actual Adsterra key
+                    'format': 'iframe',
+                    'height': 250,
+                    'width': 300,
+                    'params': {}
+                };
+                document.write('<scr' + 'ipt type="text/javascript" src="https://www.adsterra.com/' + atOptions.key + '/invoke.js"></scr' + 'ipt>');
+            })();
+        </script>
+    </div>
+
+    <!-- Redirect after 30 seconds -->
     <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
+        setTimeout(function() {
+            window.location.href = "https://lmc84.pro/wp-content/uploads/2024/10/LMC-8.4-R13.apk";
+        }, 30000); // 30 seconds
     </script>
-  </div>
-  <div class="message">
-    You will be redirected in <span id="timer">10</span> seconds...
-  </div>
-  <script>
-    // Countdown timer
-    let countdown = 10;
-    const timerElement = document.getElementById('timer');
-    const interval = setInterval(() => {
-      countdown--;
-      timerElement.textContent = countdown;
-      if (countdown === 0) {
-        clearInterval(interval);
-        // Redirect to the specified URL
-        window.location.href = "https://lmc84.pro/wp-content/uploads/2024/10/LMC-8.4-R13.apk";
-      }
-    }, 1000);
-  </script>
 </body>
 </html>
