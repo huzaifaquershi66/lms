@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adsterra Ads with Redirect</title>
+    <title>Adsterra Ads</title>
 </head>
 <body>
-    <!-- Adsterra Ad -->
-    <div id="ad-container" style="text-align:center;">
+    <!-- Ad Container -->
+    <div id="ad-container" style="text-align: center;">
         <script type="text/javascript">
-            (function() {
-                var atOptions = {
-                    'key': '4439713',  // Replace with your actual Adsterra key
-                    'format': 'iframe',
-                    'height': 250,
-                    'width': 300,
-                    'params': {}
-                };
-                document.write('<scr' + 'ipt type="text/javascript" src="https://www.adsterra.com/' + atOptions.key + '/invoke.js"></scr' + 'ipt>');
-            })();
+            var atOptions = {
+                'key': '4439713',  // Replace with your Adsterra ad key
+                'format': 'iframe',
+                'height': 250,
+                'width': 300,
+                'params': {}
+            };
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.async = true; // Asynchronous loading
+            script.src = 'https://www.adsterra.com/' + atOptions.key + '/invoke.js';
+            document.getElementById('ad-container').appendChild(script);
         </script>
     </div>
 
-    <!-- Redirect after 30 seconds -->
+    <!-- Redirect After 30 Seconds -->
     <script>
         setTimeout(function() {
             window.location.href = "https://lmc84.pro/wp-content/uploads/2024/10/LMC-8.4-R13.apk";
-        }, 30000); // 30 seconds
+        }, 30000); // Redirect after 30 seconds
     </script>
 </body>
 </html>
